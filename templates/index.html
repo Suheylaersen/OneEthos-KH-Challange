@@ -1,13 +1,49 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../static/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Extend Tailwind with a custom color
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: '#228B22', // forest green
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+<body class="min-h-screen bg-amber-100 text-black">
+
+    <!-- Flex container for top and main sections -->
+    <div class="flex flex-col min-h-screen">
+
+        <!-- Top section -->
+        <header class="bg-forest py-6 px-6">
+            <h1 class="text-medium font-bold">Financial Planner</h1>
+        </header>
+
+      <main class="flex-grow flex flex-col justify-start px-6 py-12">
+          <!-- Top part -->
+          <div class="flex flex-col items-center space-y-4 mb-16">
+              <h2 class="text-4xl font-bold text-center">Plan today, prosper tomorrow</h2>
+              <input type="number" placeholder="Enter your salary"
+                    class="border-2 border-gray-400 rounded-md px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-green-600">
+          </div>
+
+          <!-- Bottom part -->
+          <div class="flex justify-center">
+              <h3 class="text-xl text-center">
+                  Provide your salary and see how we can help you!
+              </h3>
+          </div>
+      </main>
+
 </body>
 </html>
+  
