@@ -3,50 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Planner</title>
+    <title>AI Coach</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Extend Tailwind with a custom color
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        newblack: '#272424', // forest green
-                        lightblue: '#AFD3E2', // light blue
-                        mediumblue: '#19A7CE', // medium blue
-                        darkblue: '#146C94', // dark blue
-                        shadowlightblue: '#75958D', // shaded light blue
-                        windowlightestblue: '#9ACFDD', // lightest blue for chat window
-                    }
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    forest: '#228B22',
                 }
             }
         }
+    }
     </script>
 </head>
-<body class="min-h-screen bg-mediumblue text-black">
-
-    <!-- Flex container for top and main sections -->
+<body class="min-h-screen bg-amber-100 text-black">
     <div class="flex flex-col min-h-screen">
 
-        <!-- Top section -->
-        <header class="bg-darkblue py-6 px-6">
-            <h1 class="text-medium font-bold text-white">Financial Planner</h1>
+        <header class="bg-forest py-6 px-6">
+            <h1 class="text-xl font-bold text-white">Financial Planner</h1>
         </header>
-        <!-- Main Section -->
-         <main class="flex-grow flex flex-col px-6 py-8">
-        <h2 class="text-3xl font-bold mb-6 text-center">Ask Our AI Coach About Your Financial Needs</h2>
-         <div id="chatWindow" class="flex-grow overflow-y-auto space-y-4 mb-4 bg-windowlightestblue p-4 rounded-md">
-        <!-- Chat messages will appear here -->
-         </div>
-        <div class="flex">
-            <input id="userInput" type="text" placeholder="Type your message..."
-                class="flex-grow border-2 border-gray-400 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600">
-            <button id="sendBtn"
-                    class="bg-lightblue text-white px-6 py-2 ml-4 rounded-md hover:bg-shadowlightblue transition">
-                Send
-            </button>
-         </main>
+
+        <main class="flex-grow flex flex-col px-6 py-8 max-w-3xl w-full mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-center">
+                Ask Our AI Coach About Your Financial Needs
+            </h2>
+
+            <div id="chatWindow"
+                 class="flex-grow overflow-y-auto space-y-4 mb-4 bg-white rounded-lg shadow p-4 border border-gray-200 h-[400px]">
+            </div>
+
+            <div class="flex">
+                <input
+                    id="userInput"
+                    type="text"
+                    placeholder="Type your question... (ex: how fast can I pay $2000 credit card debt?)"
+                    class="flex-grow border-2 border-gray-400 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600 bg-white"
+                >
+                <button
+                    id="sendBtn"
+                    class="bg-green-700 text-white px-6 py-2 ml-4 rounded-md hover:bg-green-800 transition font-semibold"
+                >
+                    Send
+                </button>
+            </div>
+        </main>
     </div>
-    
+
+    <script src="{{ url_for('static', filename='coach.js') }}"></script>
 </body>
 </html>
