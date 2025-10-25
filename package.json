@@ -1,0 +1,23 @@
+{
+  "name": "oneethos-kh-challange",
+  "version": "1.0.0",
+  "description": "Automate Financial Management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sabplpz/OneEthos-KH-Challange.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sabplpz/OneEthos-KH-Challange/issues"
+  },
+  "homepage": "https://github.com/Sabplpz/OneEthos-KH-Challange#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.16",
+    "tailwindcss": "^4.1.16"
+  }
+}
