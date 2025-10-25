@@ -1,8 +1,8 @@
 from google.adk.agents.llm_agent import Agent
 
-root_agent = Agent(
+financial_agent = Agent(
     model='gemini-2.5-flash',
-    name='root_agent',
-    description='A helpful assistant for user questions.',
-    instruction='Answer user questions to the best of your knowledge',
+    name='financial_agent',
+    description='A helpful assistant for user financial guidance.',
+    instruction='Answer user questions to the best of your knowledge about financial matters and create plans for them to achive financial goals.',
 )
