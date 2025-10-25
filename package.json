@@ -10,18 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/Sabplpz/OneEthos-KH-Challange.git"
   },
-  "author": "sabrina",
-  "license": "SEE LICENSE IN README.md",
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Sabplpz/OneEthos-KH-Challange/issues"
   },
   "homepage": "https://github.com/Sabplpz/OneEthos-KH-Challange#readme",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.16",
-    "express": "^5.1.0",
     "tailwindcss": "^4.1.16"
-  },
-  "keywords": [
-    "oneethos"
-  ]
+  }
 }
