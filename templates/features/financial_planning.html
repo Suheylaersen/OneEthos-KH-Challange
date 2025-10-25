@@ -3,49 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Planner</title>
+    <title>Your Plan</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Extend Tailwind with a custom color
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        newblack: '#272424', // forest green
-                        lightblue: '#AFD3E2', // light blue
-                        mediumblue: '#19A7CE', // medium blue
-                        darkblue: '#146C94', // dark blue
-                        shadowlightblue: '#75958D', // shaded light blue
-                    }
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    forest: '#228B22',
                 }
             }
         }
+    }
     </script>
 </head>
-<body class="min-h-screen bg-mediumblue text-newblack">
-
-    <!-- Flex container for top and main sections -->
+<body class="min-h-screen bg-amber-100 text-black">
     <div class="flex flex-col min-h-screen">
 
-        <!-- Top section -->
-        <header class="bg-darkblue py-6 px-6">
-            <h1 class="text-medium font-bold text-white">Financial Planner</h1>
+        <header class="bg-forest py-6 px-6">
+            <h1 class="text-xl font-bold text-white">Financial Planner</h1>
         </header>
-    <!-- Main Section -->
-        <main class="flex-grow flex flex-col items-center px-6 py-12 space-y-8">
-            <h2 class="text-4xl font-bold text-center">Provide your salary and see how we can help you!</h2>
-            <div class="flex flex-col items-center space-y-4">
-                <input id="salaryInput" type="number" placeholder="Enter your salary"
-                    class="border-2 border-gray-400 rounded-md px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-lightblue">
-                <button id="submitBtn"
-                        class="bg-lightblue text-white px-6 py-2 rounded-md hover:bg-shadowlightblue transition">
-                Submit
+
+        <main class="flex-grow flex flex-col items-center px-6 py-12 space-y-8 w-full">
+            <div class="bg-white rounded-xl shadow-md border border-gray-200 p-6 w-full max-w-md space-y-4">
+                <h2 class="text-2xl font-bold text-center text-black">Get Your Financial Plan</h2>
+
+                <div class="flex flex-col space-y-2">
+                    <label class="text-sm font-medium text-gray-700">
+                        Monthly Salary (before taxes)
+                    </label>
+                    <input
+                        id="salaryInput"
+                        type="number"
+                        min="0"
+                        class="border-2 border-gray-400 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-green-600"
+                        placeholder="e.g. 5000"
+                    >
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                    <label class="text-sm font-medium text-gray-700">
+                        State (for tax estimate)
+                    </label>
+                    <select
+                        id="stateInput"
+                        class="border-2 border-gray-400 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-green-600 bg-white"
+                    >
+                        <option value="FL">Florida (no state income tax)</option>
+                        <option value="TX">Texas (no state income tax)</option>
+                        <option value="CA">California</option>
+                        <option value="NY">New York</option>
+                        <option value="GA">Georgia</option>
+                        <option value="CO">Colorado</option>
+                        <option value="IL">Illinois</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="WA">Washington (no state income tax)</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="OH">Ohio</option>
+                        <option value="MI">Michigan</option>
+                        <option value="TN">Tennessee (no state income tax)</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="OR">Oregon</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                    </select>
+                </div>
+
+                <button
+                    id="submitBtn"
+                    class="bg-green-700 text-white px-6 py-2 w-full rounded-md hover:bg-green-800 transition font-semibold"
+                >
+                    Generate My Plan
                 </button>
-            <!-- Cards Container -->
-            <div id="cardsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 w-full max-w-4xl"></div>
+            </div>
+
+            <div id="cardsContainer" class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-6xl"></div>
         </main>
-        </div>
     </div>
-        <script src="../../static/scripts.js"></script>
+
+    <script src="{{ url_for('static', filename='planner.js') }}"></script>
 </body>
 </html>
