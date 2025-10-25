@@ -11,29 +11,34 @@
             theme: {
                 extend: {
                     colors: {
-                        forest: '#228B22', // forest green
+                        newblack: '#272424', // forest green
+                        lightblue: '#AFD3E2', // light blue
+                        mediumblue: '#19A7CE', // medium blue
+                        darkblue: '#146C94', // dark blue
+                        shadowlightblue: '#75958D', // shaded light blue
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="min-h-screen bg-amber-100 text-black">
+<body class="min-h-screen bg-mediumblue text-newblack">
 
     <!-- Flex container for top and main sections -->
     <div class="flex flex-col min-h-screen">
 
         <!-- Top section -->
-        <header class="bg-forest py-6 px-6">
+        <header class="bg-darkblue py-6 px-6">
             <h1 class="text-medium font-bold">Financial Planner</h1>
         </header>
     <!-- Main Section -->
         <main class="flex-grow flex flex-col items-center px-6 py-12 space-y-8">
+            <h2 class="text-4xl font-bold text-center">Provide your salary and see how we can help you!</h2>
             <div class="flex flex-col items-center space-y-4">
                 <input id="salaryInput" type="number" placeholder="Enter your salary"
-                    class="border-2 border-gray-400 rounded-md px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-green-600">
+                    class="border-2 border-gray-400 rounded-md px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-lightblue">
                 <button id="submitBtn"
-                        class="bg-green-700 text-white px-6 py-2 rounded-md hover:bg-green-800 transition">
+                        class="bg-lightblue text-white px-6 py-2 rounded-md hover:bg-shadowlightblue transition">
                 Submit
                 </button>
             <!-- Cards Container -->
@@ -41,6 +46,6 @@
         </main>
         </div>
     </div>
-        <script src="../static/scripts.js"></script>
+        <script src="../../static/scripts.js"></script>
 </body>
 </html>

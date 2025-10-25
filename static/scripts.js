@@ -9,7 +9,7 @@ button.addEventListener('click', () => {
 
     const card = document.createElement('div');
     card.className = 'bg-white rounded-lg shadow-md p-6 text-center';
-    card.innerHTML = `<p class="text-lg font-medium">test</p>`;
+    card.innerHTML = `<p class="text-lg font-medium">Your Budget</p>`;
     cardsContainer.appendChild(card);
 
 });
